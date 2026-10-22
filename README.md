@@ -1,3 +1,6 @@
+## Full operation shown in the video - YOUTUBE
+https://www.youtube.com/watch?v=8FB3MhTvD5o
+
 # D2 Survivors Save Editor
 
 A community-made save editor for **D2 Survivors**. Version 6.4 adds a separate, side-by-side selector for a character and that character's assigned mercenary.
@@ -80,4 +83,4 @@ Please open a GitHub Issue and include:
 Created by **Just a Polish Guy**.
 
 - YouTube: https://www.youtube.com/@justPLguy
-- Source repository: add the final repository URL here after creating it.
+- Source repository: https://github.com/justPLguy/D2-Survivors-Save-Editor-EXE
