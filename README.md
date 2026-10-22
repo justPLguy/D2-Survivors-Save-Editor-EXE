@@ -3,7 +3,7 @@ https://www.youtube.com/watch?v=8FB3MhTvD5o
 
 # D2 Survivors Save Editor
 
-A community-made save editor for **D2 Survivors**. Version 6.4 adds a separate, side-by-side selector for a character and that character's assigned mercenary.
+A community-made save editor for **D2 Survivors**. Version 6.5 adds support for editing numeric modifiers on items stored in a character's inventory, while preserving existing equipped item, mercenary equipment, and gold editing functionality.
 
 > **Important:** Back up your save before editing. This is an unofficial community tool and is not affiliated with or endorsed by the creators of D2 Survivors or Diablo II.
 
@@ -12,11 +12,19 @@ A community-made save editor for **D2 Survivors**. Version 6.4 adds a separate, 
 - Load and decode `D2S1:` save codes.
 - Edit the shared gold value.
 - Browse character classes and equipped items.
+- Browse inventory items and edit their existing numeric modifiers.
 - Browse a character's assigned mercenary separately from the character.
-- Edit numeric item modifiers.
+- Edit numeric modifiers on supported equipped and inventory items.
 - Keep pending modifier edits when switching between items.
 - Generate a modified `D2S1:` save code and save it to a text file.
 - Preserve the existing save data structure when encoding the edited save.
+
+## What's New in Version 6.5
+
+- Added support for editing numeric modifiers on items stored in character inventory.
+- Preserved equipped item and mercenary equipment editing.
+- Gold editing and existing save functionality remain unchanged.
+- Verified inventory modifier changes in-game, including changes to equipped and inventory items.
 
 ## Download for Windows
 
@@ -64,6 +72,7 @@ These results are snapshots, not a guarantee of safety, and VirusTotal results c
 ## Known limitations
 
 - The editor changes numeric modifiers that are already present on supported item records; it does not create arbitrary new modifiers.
+- Inventory editing is limited to supported item records found in the save.
 - The mercenary selector lists mercenary data found in the save. It does not edit the mercenary's level, skills, or other character statistics.
 - Antivirus behavior varies between products and versions.
 - The application has been tested by the maintainer on their own Windows setup; compatibility with every Windows configuration is not guaranteed.
