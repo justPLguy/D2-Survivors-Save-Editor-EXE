@@ -17,7 +17,7 @@ A community-made save editor for **D2 Survivors**. Version 6.4 adds a separate, 
 
 ## Download for Windows
 
-Open **GitHub → Releases** and download the latest `D2SurvivorsSaveEditor-vX.Y-Windows.zip`.
+Open **GitHub → Releases** and download the latest `D2SurvivorsSaveEditor.zip`.
 
 1. Download and extract the ZIP.
 2. Keep `D2SurvivorsSaveEditor.exe` and the `_internal` folder together.
