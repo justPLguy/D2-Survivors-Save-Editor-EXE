@@ -81,7 +81,3 @@ Created by **Just a Polish Guy**.
 
 - YouTube: https://www.youtube.com/@justPLguy
 - Source repository: add the final repository URL here after creating it.
-
-## License
-
-See [`LICENSE_OPTIONS.md`](LICENSE_OPTIONS.md). Before publishing, choose one license and place its full text in a root-level file named `LICENSE`. Do not publish with multiple competing licenses unless you intentionally want to offer dual licensing.
