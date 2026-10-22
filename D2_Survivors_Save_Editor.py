@@ -84,6 +84,26 @@ def equipped_items_for_class(data, class_key):
     return walk_items(merc_root, ("mercs", owner_class, "hired", merc_type, "worn"))
 
 
+def inventory_items_for_class(data, class_key):
+    """Return unequipped character inventory items for the selected class."""
+    if str(class_key).startswith("__merc__|"):
+        # Mercenary inventory is not exposed by the current save schema. If a
+        # future save contains one, detect it without assuming its shape.
+        _, owner_class, merc_type = str(class_key).split("|", 2)
+        merc = (
+            data.get("mercs", {})
+                .get(owner_class, {})
+                .get("hired", {})
+                .get(merc_type, {})
+        )
+        inventory_root = merc.get("inventory", {}) if isinstance(merc, dict) else {}
+        return walk_items(inventory_root, ("mercs", owner_class, "hired", merc_type, "inventory"))
+
+    root = data.get("inventoryByClass", {})
+    class_inventory = root.get(class_key, []) if isinstance(root, dict) else []
+    return walk_items(class_inventory, ("inventoryByClass", class_key))
+
+
 def class_display_name(data, class_key):
     if str(class_key).startswith("__merc__|"):
         _, owner_class, merc_type = str(class_key).split("|", 2)
@@ -108,7 +128,7 @@ def pretty_class(class_key):
 class SaveEditor(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("D2 Survivors Save Editor v6.3 — Mercenary Equipment")
+        self.title("D2 Survivors Save Editor v6.4 — Inventory & Mercenary Equipment")
         self.geometry("1080x820")
         self.minsize(900, 760)
         self.data = None
@@ -127,7 +147,7 @@ class SaveEditor(tk.Tk):
         ttk.Label(root, text="D2 Survivors Save Editor", font=("Segoe UI", 18, "bold")).pack(anchor="w")
         ttk.Label(
             root,
-            text="Edit gold, character equipment, and mercenary equipment modifiers.",
+            text="Edit gold, equipped items, inventory items, and mercenary equipment modifiers.",
             foreground="#555"
         ).pack(anchor="w", pady=(2, 12))
 
@@ -174,8 +194,23 @@ class SaveEditor(tk.Tk):
         self.merc_list.pack(fill="both", expand=True)
         self.merc_list.bind("<<ListboxSelect>>", self.on_merc_select)
 
-        item_frame = ttk.LabelFrame(left_frame, text="4. Equipped items", padding=8)
+        item_frame = ttk.LabelFrame(left_frame, text="4. Items", padding=8)
         item_frame.pack(fill="both", expand=True)
+
+        source_row = ttk.Frame(item_frame)
+        source_row.pack(fill="x", pady=(0, 6))
+        ttk.Label(source_row, text="Show:").pack(side="left")
+        self.item_source_var = tk.StringVar(value="Equipped")
+        self.item_source_combo = ttk.Combobox(
+            source_row,
+            textvariable=self.item_source_var,
+            values=("Equipped", "Inventory"),
+            state="readonly",
+            width=13,
+        )
+        self.item_source_combo.pack(side="left", padx=(6, 0))
+        self.item_source_combo.bind("<<ComboboxSelected>>", self.on_item_source_change)
+
         self.item_list = tk.Listbox(item_frame, width=35, height=16, exportselection=False)
         self.item_list.pack(side="left", fill="both", expand=True)
         self.item_list.bind("<<ListboxSelect>>", self.on_item_select)
@@ -253,6 +288,7 @@ class SaveEditor(tk.Tk):
         self.selected_item_index = None
         self.modifier_vars = []
         self.gold_var.set("")
+        self.item_source_var.set("Equipped")
         self.output_code = None
         self.status_var.set("Cleared. Paste a save code to begin.")
 
@@ -335,21 +371,47 @@ class SaveEditor(tk.Tk):
         self.current_class_key = merc_key
         self.refresh_items()
 
+    def on_item_source_change(self, event=None):
+        if self.data is not None and self.current_class_key:
+            self.refresh_items()
+
     def refresh_items(self):
-        self.items = equipped_items_for_class(self.data, self.current_class_key)
+        source = self.item_source_var.get() if hasattr(self, "item_source_var") else "Equipped"
+        if source == "Inventory":
+            self.items = inventory_items_for_class(self.data, self.current_class_key)
+        else:
+            self.items = equipped_items_for_class(self.data, self.current_class_key)
+
         self.item_list.delete(0, "end")
-        for _, item in self.items:
-            self.item_list.insert("end", f"{get_item_name(item)}  ({len(item.get('mods', []))} mods)")
+        for path, item in self.items:
+            path_label = ""
+            if path and isinstance(path[-1], int):
+                path_label = f"  [#{path[-1] + 1}]"
+            self.item_list.insert(
+                "end",
+                f"{get_item_name(item)}{path_label}  ({len(item.get('mods', []))} mods)"
+            )
+
         for child in self.mod_inner.winfo_children():
             child.destroy()
         self.modifier_vars = []
         self.selected_item_index = None
+
         if self.items:
             self.item_list.selection_set(0)
             self.item_list.activate(0)
             self.on_item_select()
+
+        if str(self.current_class_key).startswith("__merc__|") and source == "Inventory":
+            scope_label = "mercenary inventory"
+        elif str(self.current_class_key).startswith("__merc__|"):
+            scope_label = "mercenary equipment"
+        else:
+            scope_label = "inventory" if source == "Inventory" else "equipped items"
+
         self.status_var.set(
-            f"{class_display_name(self.data, self.current_class_key)}: {len(self.items)} item(s) found."
+            f"{class_display_name(self.data, self.current_class_key)} — "
+            f"{scope_label}: {len(self.items)} item(s) found."
         )
 
     def on_item_select(self, event=None):
@@ -370,9 +432,14 @@ class SaveEditor(tk.Tk):
             child.destroy()
         self.modifier_vars = []
 
-        ttk.Label(self.mod_inner, text=get_item_name(item), font=("Segoe UI", 14, "bold")).grid(
-            row=0, column=0, columnspan=3, sticky="w", pady=(0, 10)
+        item_scope = self.item_source_var.get() if not str(self.current_class_key).startswith("__merc__|") else (
+            "Mercenary inventory" if self.item_source_var.get() == "Inventory" else "Mercenary equipment"
         )
+        ttk.Label(
+            self.mod_inner,
+            text=f"{get_item_name(item)} — {item_scope}",
+            font=("Segoe UI", 14, "bold")
+        ).grid(row=0, column=0, columnspan=3, sticky="w", pady=(0, 10))
         ttk.Label(self.mod_inner, text="Stat").grid(row=1, column=0, sticky="w", padx=(0, 10))
         ttk.Label(self.mod_inner, text="Current value").grid(row=1, column=1, sticky="w", padx=(0, 10))
         ttk.Label(self.mod_inner, text="New value").grid(row=1, column=2, sticky="w")
