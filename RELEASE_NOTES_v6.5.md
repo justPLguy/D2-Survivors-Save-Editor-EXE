@@ -7,7 +7,7 @@
 
 ## Testing
 - Inventory modifier changes were verified in-game using the Python version.
-- The packaged EXE must be launched and tested on Windows before release.
+- The packaged EXE was launched and tested successfully on Windows.
 
 ## Important
 Always back up your original save before making modifications.
