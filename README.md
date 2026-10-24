@@ -1,100 +1,140 @@
-::: {align="center"}
-# ⚔️ D2 Survivors Save Editor --- Windows
+# D2 Survivors Save Editor — Python
 
-### Ready-to-use Windows application
+A Python-based save editor for **D2 Survivors**, created by **Just a Polish Guy**.
 
-Edit gold and supported item modifiers in **D2 Survivors** using a
-portable Windows build. No Python installation or source-code setup is
-required.
+This project provides a desktop tool for editing supported game save data. It is intended for players who want to inspect and modify their saves using a straightforward graphical interface.
 
-[**⬇️ Download from
-Releases**](https://github.com/justPLguy/D2-Survivors-Save-Editor-EXE/releases)
-:::
+This repository contains the **Python version** of the editor. If you prefer not to run Python scripts yourself, standalone alternatives are available: an **EXE version for Windows** and a **Web version**.
 
-------------------------------------------------------------------------
+## 🚀 Available Versions
 
-## ✨ About
+Choose the version that best fits your needs:
 
-**D2 Survivors Save Editor** is a community-made save editor distributed
-as a ready-to-use Windows application.
+| Version | Description | Link |
+|---|---|---|
+| 🐍 **Python** | Run the editor directly from its Python source code. | [Python Repository](https://github.com/justPLguy/D2-Survivors-Save-Editor-PY) |
+| 💻 **EXE** | Standalone Windows application. | [EXE Repository](https://github.com/justPLguy/D2-Survivors-Save-Editor-EXE) |
+| 🌐 **Web** | Browser-based version of the editor. | [Web Repository](https://github.com/justPLguy/D2-Survivors-Save-Editor-Web) |
 
-This repository is dedicated to the **packaged Windows version**.
-Download the ZIP from the Releases page, extract it, and run the
-included application. Source-code development and Python-based versions
-are maintained separately.
+**Not sure which version to choose?**
 
-## 🧰 Features
+- Choose **Python** if you want to run the source script directly.
+- Choose **EXE** if you want a more convenient Windows experience without manually launching a Python script.
+- Choose **Web** if you prefer a browser-based interface.
 
--   Load and decode `D2S1` save codes.
--   View and edit the shared gold value.
--   Browse character classes and equipped items.
--   Browse inventory items and edit supported existing numeric
-    modifiers.
--   Browse a character's assigned mercenary and its equipment
-    separately.
--   Edit supported numeric modifiers on equipped, inventory, and
-    mercenary items.
--   Preserve pending modifier edits when switching between items.
--   Generate a modified `D2S1` save code.
--   Save the modified save code to a text file.
--   Preserve the existing save data structure when encoding supported
-    changes.
+Features and availability may differ between versions. Check the respective repository for details.
 
-Feature availability depends on the published application version and
-the data present in the loaded save.
+## ✨ About the Editor
 
-## 🚀 How to use
+D2 Survivors Save Editor is a community-made utility designed to edit supported D2 Survivors save data.
 
-1.  Open the
-    [**Releases**](https://github.com/justPLguy/D2-Survivors-Save-Editor-EXE/releases)
-    page.
-2.  Download the ZIP attached to the version you want to use.
-3.  Extract the ZIP to a folder.
-4.  Run `D2SurvivorsSaveEditor.exe` from the extracted folder.
-5.  Keep the `_internal` folder beside the executable if it is included
-    in the downloaded package.
-6.  Load your save code, make your changes, and export the modified
-    `D2S1` save code.
+Depending on the current release, available functionality may include:
 
-**Do not run the executable directly from inside the ZIP archive.**
-Extract the complete package first.
+- Editing gold.
+- Modifying supported character and equipment attributes.
+- Editing supported skills and other save data.
+- Managing supported belt slots and potions.
+- Using a graphical interface to make changes more conveniently.
 
-## 📥 Downloads
+The exact feature set may change with each release. Please check the relevant release notes for the latest information.
 
-Download published Windows builds from the repository's Releases page:
+## 🐍 Running the Python Version
 
-### [➡️ D2 Survivors Save Editor --- Windows Releases](https://github.com/justPLguy/D2-Survivors-Save-Editor-EXE/releases)
+### Requirements
 
-Each release contains the files and version-specific information for
-that build. Use the assets attached to the release rather than
-downloading individual program files from the source repository.
+- Windows PC.
+- Python installed on your system.
+- A compatible D2 Survivors save file.
+- Any additional dependencies required by the particular release.
 
-## ⚠️ Important
+### Step 1 — Install Python
 
--   **Always back up your original save before editing.**
--   This is an unofficial, community-made tool. It is not affiliated
-    with or endorsed by the creators of D2 Survivors or Diablo II.
--   Use the editor at your own risk.
--   Only features supported by the downloaded version can be edited.
+If Python is not installed, download it from the official website:
 
-## 👤 Credits
+[**Download Python**](https://www.python.org/downloads/)
+
+During installation on Windows, enable **Add Python to PATH** if that option is available.
+
+### Step 2 — Download the Editor
+
+1. Open the [Python repository](https://github.com/justPLguy/D2-Survivors-Save-Editor-PY).
+2. Click **Code**.
+3. Select **Download ZIP**.
+4. Extract the downloaded archive to a folder on your computer.
+
+Alternatively, download the Python script from the relevant release or repository files.
+
+### Step 3 — Run the Editor
+
+Open the folder containing the Python script.
+
+In the folder's address bar, type `cmd` and press Enter to open Command Prompt in that location.
+
+Run the script using:
+
+```bash
+python your_editor_file.py
+```
+
+Replace `your_editor_file.py` with the actual name of the downloaded script.
+
+If the `python` command is unavailable, try:
+
+```bash
+py your_editor_file.py
+```
+
+If the editor requires additional packages, install the dependencies specified by that release before launching it.
+
+### Step 4 — Edit Your Save
+
+1. Launch the editor.
+2. Open a compatible save file using the editor's interface.
+3. Make the changes supported by your version.
+4. Save or export the edited save using the available options.
+5. Follow any additional instructions provided by the editor.
+
+**Always create a backup of your original save before making changes.**
+
+## ⚠️ Important Warning
+
+Editing your save may cause your character to be marked as edited. **Runs made with a marked character may not count towards leaderboards.**
+
+Use this tool at your own risk. Keep an untouched backup of your original save and review the in-game status after making changes.
+
+## 📦 Releases & Patch Notes
+
+Every new release will have its **own release notes and patch notes**, describing the changes, new features, fixes, and known issues for that specific version.
+
+For the latest version and its corresponding patch notes, visit:
+
+[**View Python Releases**](https://github.com/justPLguy/D2-Survivors-Save-Editor-PY/releases)
+
+The main README provides general information about the project. Version-specific changes belong in the corresponding release notes.
+
+## 🔗 Other Projects
+
+Explore the other versions of D2 Survivors Save Editor:
+
+- [Python Version — Source Code](https://github.com/justPLguy/D2-Survivors-Save-Editor-PY)
+- [EXE Version — Windows Application](https://github.com/justPLguy/D2-Survivors-Save-Editor-EXE)
+- [Web Version — Browser-Based Editor](https://github.com/justPLguy/D2-Survivors-Save-Editor-Web)
+
+## 📺 Follow Just a Polish Guy
+
+Follow my channels for updates, tutorials, gaming content, and more.
+
+- **YouTube:** [Visit my YouTube channel](https://www.youtube.com/@justPLguy)
+- **Facebook:** [Just a Polish Guy](https://www.facebook.com/justPLguy/)
+
+## 👤 Creator
 
 Created by **Just a Polish Guy**.
 
--   **Facebook:**
-    [facebook.com/justPLguy](https://www.facebook.com/justPLguy)
--   **YouTube:**
-    [youtube.com/@justPLguy](https://www.youtube.com/@justPLguy)
--   **GitHub:** [github.com/justPLguy](https://github.com/justPLguy)
+This project is independently developed for the D2 Survivors community.
 
-## 🔗 Related project
+If you find the editor useful, consider following my channels and checking back for future releases.
 
--   [D2 Survivors Save Editor --- Python source and
-    development](https://github.com/justPLguy/D2-Survivors-Save-Editor)
+---
 
-------------------------------------------------------------------------
-
-::: {align="center"}
-**Portable Windows release · Download from Releases · No Python setup
-required**
-:::
+*D2 Survivors Save Editor is a community-made project. It is not an official game tool and is not affiliated with the game's developers.*
