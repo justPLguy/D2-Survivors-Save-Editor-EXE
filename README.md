@@ -2,13 +2,16 @@
 
 **A community-made save editor for D2 Survivors, created by Just a Polish Guy.**
 
-D2 Survivors Save Editor is a tool designed to edit supported game save data through a convenient interface.
+This repository contains the **standalone EXE version for Windows**: download it, double-click it, done. No Python needed.
 
-This repository contains the **standalone EXE version for Windows**. It is intended for users who want to use the editor without manually launching a Python script.
+> ### 🆓 This is the DEMO — the full version is free on Discord
+> The EXE here is **v10.1 Demo**. You can load your save, change gold, look at all your items and stash,
+> and check your save with the game's own rules.
+> The Item Generator, Runewords, Charms, COPY ITEM, Skills and Belt editors are **previews**.
+>
+> **👉 Get the full version (free) on our Discord: https://discord.gg/nENzQxTh4**
 
-**Download the latest release, run the application, and get started!**
-
-Prefer another format? The editor is also available as a Python script and a browser-based Web version.
+**[➡️ Download the latest release](https://github.com/justPLguy/D2-Survivors-Save-Editor-EXE/releases/latest)**
 
 ---
 
@@ -20,81 +23,86 @@ Prefer another format? The editor is also available as a Python script and a bro
 | 🐍 **Python** | Run the Python script directly. | [Python Repository](https://github.com/justPLguy/D2-Survivors-Save-Editor-PY) |
 | 🌐 **Web** | Browser-based version. | [Web Repository](https://github.com/justPLguy/D2-Survivors-Save-Editor-Web) |
 
-**Which version should you choose?**
-
 - Choose **EXE** for the most straightforward Windows setup.
 - Choose **Python** if you want to run the source script yourself.
 - Choose **Web** if you prefer a browser-based editor.
 
 Features may differ between versions. Check the relevant repository for details.
 
-## ✨ Features
+## ✨ Features (v10.1)
 
-Depending on the release, the editor may support:
+| Feature | Demo (here) | Full version (Discord) |
+|---|:---:|:---:|
+| Load / export save codes, automatic backup before every export | ✅ | ✅ |
+| Gold editing | ✅ | ✅ |
+| Character & Mercenary, active hero bar | ✅ | ✅ |
+| Items & Modifiers: every stat, its range and **LEGIT / NOT LEGIT** status | 👁️ view | ✅ edit |
+| Item tooltips exactly like in the game (All Resistances, damage, final Defense, set bonuses) | ✅ | ✅ |
+| Stash: personal and shared stash tabs | ✅ | ✅ |
+| Reference: every unique, set item and runeword with its ranges | ✅ | ✅ |
+| Check save with the game's own rules (items + hero builds) | ✅ | ✅ |
+| Save Manager | ✅ | ✅ |
+| **Item Generator**: unique, set, rare, magic and white items made exactly like the game makes them | 👁️ preview | ✅ |
+| **Runewords** and **Charms** generators | 👁️ preview | ✅ |
+| **COPY ITEM**: copy an item to any hero's inventory, gear, mercenary or stash | 👁️ preview | ✅ |
+| Re-roll items to the values you want (stays legit) | 👁️ preview | ✅ |
+| **Skills** editor, **Belt & Potions** editor | 👁️ preview | ✅ |
 
-- Gold editing.
-- Supported character and equipment modifiers.
-- Supported skill editing.
-- Belt slot and potion editing.
-- A graphical interface for managing supported save data.
+For the exact changes in each build, check the [release notes](https://github.com/justPLguy/D2-Survivors-Save-Editor-EXE/releases).
 
-For the exact features included in a specific build, check its release notes.
+## 💻 How to Download and Run
 
-## 💻 How to Download and Run the EXE Version
+### 1. Download
 
-### 1. Download the Latest Release
+1. Open the **[latest release](https://github.com/justPLguy/D2-Survivors-Save-Editor-EXE/releases/latest)**.
+2. Under **Assets**, download `D2.Survivors.Save.Editor.10.1.Demo.exe`.
+3. Move it to a folder where you want to keep the editor and double-click it.
 
-Open the releases page:
+Download the executable only from this official repository, not from third-party websites.
 
-**[➡️ Download D2 Survivors Save Editor — EXE](https://github.com/justPLguy/D2-Survivors-Save-Editor-EXE/releases)**
+### 2. Edit Your Save
 
-1. Open the latest release.
-2. Read the release notes.
-3. Download the Windows executable from the release assets.
+1. In the game, open **SAVES** and copy your save code (it starts with `D2S1:`).
+2. In the editor, click **Paste Clipboard**, then **Load Save Code**.
+3. Pick your hero in **Character & Mercenary** and make your changes (for example, gold).
+4. Click **Generate Save Code**, review the change list and click **Copy Code**.
+5. In the game, open **SAVES**, paste the new code and load it.
 
-Download the executable from this official repository rather than from unknown third-party websites.
+Not sure where to start? Open the red **HOW TO USE EDITOR** tab inside the editor: it explains every tab and button.
 
-### 2. Run the Application
-
-1. Locate the downloaded `.exe` file.
-2. Move it to a folder where you want to keep the editor.
-3. Double-click the executable to launch it.
-
-No separate Python installation should be necessary for a properly packaged standalone release.
-
-If a release includes additional files or specific installation instructions, follow the instructions provided with that release.
-
-### 3. Edit Your Save
-
-1. Launch the editor.
-2. Load a compatible D2 Survivors save file.
-3. Modify the data supported by your version.
-4. Save or export the edited file using the available options.
-5. Follow any additional instructions provided by the editor.
-
-**Always back up your original save before making changes.**
+**Always keep a copy of your original save code before making changes.**
 
 ## ⚠️ Important Warning
 
-Editing a save may cause the character to be marked as edited. Runs made with a marked character may not count towards leaderboards.
+The editor is made for **offline fun, not for the ladder**. Edited items or characters may be marked by the game,
+and runs made with a marked character may not count towards leaderboards.
 
-Use the editor at your own risk. Keep an untouched backup of your original save and check the character's status in-game after editing.
+Use the editor at your own risk. Keep an untouched copy of your original save code and check your character in-game after editing.
 
-## 🛡️ Windows Security Notices
+## 🛡️ Windows Security Notice
 
-Windows may display a security warning when launching an executable that is not widely recognized or digitally signed.
+The EXE is not code-signed, so Windows SmartScreen may show **"Windows protected your PC"** the first time you run it.
+If you downloaded it from this repository's Releases page, click **More info → Run anyway**.
 
-Only use builds downloaded from this project's official repository. Do not bypass a security warning unless you have verified the file and understand the warning.
+If you prefer not to run an unsigned EXE, use the [Python version](https://github.com/justPLguy/D2-Survivors-Save-Editor-PY) instead.
+
+## 🔒 Sharing Saves (optional)
+
+After every export the editor asks whether you want to share the save code with the editor's database to help improve the editor.
+**Nothing is sent unless you click Yes.** Choosing No keeps everything on your computer.
 
 ## 📦 Releases & Patch Notes
 
-Every release has its own patch notes describing changes, new features, fixes, and known issues.
-
-For the latest build and its corresponding patch notes, visit:
+Every release has its own patch notes describing changes, new features, fixes, and known issues:
 
 **[➡️ EXE Releases](https://github.com/justPLguy/D2-Survivors-Save-Editor-EXE/releases)**
 
-The main README contains general project information. Detailed changes belong in the corresponding release notes.
+## 💬 Discord — Full Version, Help and Bug Reports
+
+The **full version is free** on our Discord, together with updates, help and item requests.
+Found a bug or have an idea? Report it there, every report helps!
+
+**👉 https://discord.gg/nENzQxTh4**
 
 ## 🔗 Other Projects
 
@@ -106,8 +114,9 @@ The main README contains general project information. Detailed changes belong in
 
 Follow my channels for updates, tutorials, gaming content, and more.
 
-- **YouTube:** [@justPLGguy](https://www.youtube.com/@justPLguy)
+- **YouTube:** [@justPLguy](https://www.youtube.com/@justPLguy)
 - **Facebook:** [Just a Polish Guy](https://www.facebook.com/justPLguy/)
+- **Discord:** [Join the community](https://discord.gg/nENzQxTh4)
 
 ## 👤 About the Creator
 
