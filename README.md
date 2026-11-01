@@ -5,9 +5,9 @@
 This repository contains the **standalone EXE version for Windows**: download it, double-click it, done. No Python needed.
 
 > ### 🆓 This is the DEMO — the full version is free on Discord
-> The EXE here is **v10.1 Demo**. You can load your save, change gold, look at all your items and stash,
-> and check your save with the game's own rules.
-> The Item Generator, Runewords, Charms, COPY ITEM, Skills and Belt editors are **previews**.
+> The EXE here is **v10.4 Demo**. You can load your save, change gold, see every Charsi upgrade with its cost,
+> look at all your items and stash, and check your save with the game's own rules.
+> The Item Generator, Runewords, Charms, COPY ITEM, DESIGN, Skills and Belt editors are **previews**.
 >
 > **👉 Get the full version (free) on our Discord: https://discord.gg/nENzQxTh4**
 
@@ -29,12 +29,13 @@ This repository contains the **standalone EXE version for Windows**: download it
 
 Features may differ between versions. Check the relevant repository for details.
 
-## ✨ Features (v10.1)
+## ✨ Features (v10.4)
 
 | Feature | Demo (here) | Full version (Discord) |
 |---|:---:|:---:|
 | Load / export save codes, automatic backup before every export | ✅ | ✅ |
-| Gold editing | ✅ | ✅ |
+| **Gold & Charsi**: gold editing, every Charsi upgrade with gold spent, next price and gold to max | ✅ | ✅ |
+| **Update notice**: shows when a newer stable version is out on Discord | ✅ | ✅ |
 | Character & Mercenary, active hero bar | ✅ | ✅ |
 | Items & Modifiers: every stat, its range and **LEGIT / NOT LEGIT** status | 👁️ view | ✅ edit |
 | Item tooltips exactly like in the game (All Resistances, damage, final Defense, set bonuses) | ✅ | ✅ |
@@ -45,6 +46,9 @@ Features may differ between versions. Check the relevant repository for details.
 | **Item Generator**: unique, set, rare, magic and white items made exactly like the game makes them | 👁️ preview | ✅ |
 | **Runewords** and **Charms** generators | 👁️ preview | ✅ |
 | **COPY ITEM**: copy an item to any hero's inventory, gear, mercenary or stash | 👁️ preview | ✅ |
+| COPY ITEM with a brand new roll | 👁️ preview | ✅ |
+| Rares with up to 6 chosen affixes (multi-core search) | 👁️ preview | ✅ |
+| **DESIGN**: pick the picture of rings, amulets and charms | 👁️ preview | ✅ |
 | Re-roll items to the values you want (stays legit) | 👁️ preview | ✅ |
 | **Skills** editor, **Belt & Potions** editor | 👁️ preview | ✅ |
 
@@ -55,16 +59,18 @@ For the exact changes in each build, check the [release notes](https://github.co
 ### 1. Download
 
 1. Open the **[latest release](https://github.com/justPLguy/D2-Survivors-Save-Editor-EXE/releases/latest)**.
-2. Under **Assets**, download `D2.Survivors.Save.Editor.10.1.Demo.exe`.
+2. Under **Assets**, download `D2 Survivors Save Editor 10.4 Demo.exe`.
 3. Move it to a folder where you want to keep the editor and double-click it.
 
 Download the executable only from this official repository, not from third-party websites.
+
+Works with D2 Survivors **2026.1101.1**.
 
 ### 2. Edit Your Save
 
 1. In the game, open **SAVES** and copy your save code (it starts with `D2S1:`).
 2. In the editor, click **Paste Clipboard**, then **Load Save Code**.
-3. Pick your hero in **Character & Mercenary** and make your changes (for example, gold).
+3. Pick your hero in **Character & Mercenary** and make your changes (for example, gold in the **Gold & Charsi** tab).
 4. Click **Generate Save Code**, review the change list and click **Copy Code**.
 5. In the game, open **SAVES**, paste the new code and load it.
 
@@ -85,6 +91,12 @@ The EXE is not code-signed, so Windows SmartScreen may show **"Windows protected
 If you downloaded it from this repository's Releases page, click **More info → Run anyway**.
 
 If you prefer not to run an unsigned EXE, use the [Python version](https://github.com/justPLguy/D2-Survivors-Save-Editor-PY) instead.
+
+## 🔔 Update Notice
+
+At start-up the editor checks [`version.json`](version.json) in this repository to see which stable version is the newest.
+It only reads that version number: **nothing is sent, downloaded or installed.**
+Green **UP TO DATE** means you have the newest stable version. A flashing red/orange notice means a new version is waiting on Discord.
 
 ## 🔒 Sharing Saves (optional)
 
