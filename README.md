@@ -5,7 +5,7 @@
 This repository contains the **standalone EXE version for Windows**: download it, double-click it, done. No Python needed.
 
 > ### 🆓 This is the DEMO — the full version is free on Discord
-> The EXE here is **v10.8 Demo** and works with D2 Survivors **2026.1102.1**. You can load your save, change gold, see every Charsi upgrade with its cost,
+> The EXE here is **v10.9 Demo** and works with D2 Survivors **2026.1102.1**. You can load your save, change gold, see every Charsi upgrade with its cost,
 > look at all your items and stash, and check your save with the game's own rules.
 > The Item Generator, Runewords, Charms, DEV GENERATION, COPY ITEM, DESIGN, Skills and Belt editors are **previews**.
 >
@@ -31,6 +31,11 @@ Features may differ between versions. Check the relevant repository for details.
 
 ## 🆕 What's New Since 10.5
 
+- **10.9: weapon damage, 한국어 game texts and Undo.**
+  - Weapon tooltips show **One-Hand / Two-Hand Damage** exactly like the game (checked on 12,905 weapons). Armor, helms and shields show a **Base Defense** line.
+  - **한국어 game texts:** in Korean, item names, stat lines and skills are shown like D2 Survivors shows them. The editor reads them from your own game install (`resources\app.asar`); nothing is bundled with the editor or changed in the game.
+  - **Undo Last Change** steps back one change at a time.
+  - Full version: **Delete item** (with undo), **Copy with a new roll** from a chosen difficulty (Normal, Nightmare, Hell or a Terror tier), and a **50-100% slider** for wanted rolls.
 - **10.8: game 2026.1102.1 support.** The editor's tables come from the new game, and every check matches it again.
   - **Second weapon set:** Equipped lists [weapon set I] / [weapon set II], and Check save covers both.
   - Item tooltips show **Required Level** like the game.
@@ -41,7 +46,7 @@ Features may differ between versions. Check the relevant repository for details.
 
 Items made with DEV GENERATION or Set values directly are always **NOT LEGIT** (red border in the game; worn, they keep runs off the ladder).
 
-## ✨ Features (v10.8)
+## ✨ Features (v10.9)
 
 | Feature | Demo (here) | Full version (Discord) |
 |---|:---:|:---:|
@@ -49,10 +54,12 @@ Items made with DEV GENERATION or Set values directly are always **NOT LEGIT** (
 | **Gold & Charsi**: gold editing, every Charsi upgrade with gold spent, next price and gold to max | ✅ | ✅ |
 | **Update notice**: shows when a newer stable version is out on Discord | ✅ | ✅ |
 | **6 languages**: English, Polski, Deutsch, Français, 한국어, 简体中文 (globe and flag, top right) | ✅ | ✅ |
+| **한국어 game texts** read from your own D2 Survivors install | ✅ | ✅ |
+| **Undo Last Change** | ✅ | ✅ |
 | Character & Mercenary, active hero bar | ✅ | ✅ |
 | **Both weapon sets** shown and checked | ✅ | ✅ |
 | Items & Modifiers: every stat, its range and **LEGIT / NOT LEGIT** status | 👁️ view | ✅ edit |
-| Item tooltips exactly like in the game (All Resistances, damage, final Defense, set bonuses, Required Level) | ✅ | ✅ |
+| Item tooltips exactly like in the game (All Resistances, weapon damage, final Defense, set bonuses, Required Level) + Base Defense line | ✅ | ✅ |
 | Stash: personal and shared stash tabs | ✅ | ✅ |
 | Reference: every unique, set item and runeword with its ranges | ✅ | ✅ |
 | Check save with the game's own rules (items + hero builds) | ✅ | ✅ |
@@ -60,8 +67,9 @@ Items made with DEV GENERATION or Set values directly are always **NOT LEGIT** (
 | **Item Generator**: unique, set, rare, magic and white items made exactly like the game makes them | 👁️ preview | ✅ |
 | **Runewords** and **Charms** generators | 👁️ preview | ✅ |
 | **COPY ITEM**: copy an item to any hero's inventory, gear, mercenary or stash | 👁️ preview | ✅ |
-| COPY ITEM with a brand new roll | 👁️ preview | ✅ |
-| Rares with up to 6 chosen affixes (multi-core search) | 👁️ preview | ✅ |
+| COPY ITEM with a brand new roll, dropped in the difficulty you choose | 👁️ preview | ✅ |
+| **Delete item** (Undo brings it back) | 👁️ preview | ✅ |
+| Rares with up to 6 chosen affixes (multi-core search), 50-100% slider for wanted rolls | 👁️ preview | ✅ |
 | **DESIGN**: pick the picture of rings, amulets and charms | 👁️ preview | ✅ |
 | Re-roll items to the values you want (stays legit) | 👁️ preview | ✅ |
 | Put weapons and shields into **either weapon set** | 👁️ preview | ✅ |
@@ -76,7 +84,7 @@ For the exact changes in each build, check the [release notes](https://github.co
 ### 1. Download
 
 1. Open the **[latest release](https://github.com/justPLguy/D2-Survivors-Save-Editor-EXE/releases/latest)**.
-2. Under **Assets**, download `D2 Survivors Save Editor 10.8 Demo.exe`.
+2. Under **Assets**, download `D2 Survivors Save Editor 10.9 Demo.exe`.
 3. Move it to a folder where you want to keep the editor and double-click it.
 
 Download the executable only from this official repository, not from third-party websites.
@@ -93,6 +101,7 @@ Works with D2 Survivors **2026.1102.1** (saves from 2026.1101.1 load too).
 
 Not sure where to start? Open the red **HOW TO USE EDITOR** tab inside the editor: it explains every tab and button.
 To change the language, click the globe and flag in the top-right corner.
+In 한국어 the editor looks for D2 Survivors on its own; if it can't find it, choose the game folder under the globe ("D2 Survivors folder").
 
 **Always keep a copy of your original save code before making changes.**
 
