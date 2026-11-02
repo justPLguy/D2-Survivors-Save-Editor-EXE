@@ -5,9 +5,9 @@
 This repository contains the **standalone EXE version for Windows**: download it, double-click it, done. No Python needed.
 
 > ### 🆓 This is the DEMO — the full version is free on Discord
-> The EXE here is **v10.4 Demo**. You can load your save, change gold, see every Charsi upgrade with its cost,
+> The EXE here is **v10.8 Demo** and works with D2 Survivors **2026.1102.1**. You can load your save, change gold, see every Charsi upgrade with its cost,
 > look at all your items and stash, and check your save with the game's own rules.
-> The Item Generator, Runewords, Charms, COPY ITEM, DESIGN, Skills and Belt editors are **previews**.
+> The Item Generator, Runewords, Charms, DEV GENERATION, COPY ITEM, DESIGN, Skills and Belt editors are **previews**.
 >
 > **👉 Get the full version (free) on our Discord: https://discord.gg/nENzQxTh4**
 
@@ -29,16 +29,30 @@ This repository contains the **standalone EXE version for Windows**: download it
 
 Features may differ between versions. Check the relevant repository for details.
 
-## ✨ Features (v10.4)
+## 🆕 What's New Since 10.5
+
+- **10.8: game 2026.1102.1 support.** The editor's tables come from the new game, and every check matches it again.
+  - **Second weapon set:** Equipped lists [weapon set I] / [weapon set II], and Check save covers both.
+  - Item tooltips show **Required Level** like the game.
+  - Bul-Kathos' Sacred Charge, Famine and Naj's Circlet read as legit from both Diablo II and Resurrected files.
+  - Full version: weapons and shields can go into either set; runewords on class bases keep the base's property; Civerb's Cudgel and Trang-Oul's Claws come with their new fixed bonuses.
+- **10.7: DEV GENERATION** (full version): any unique or set item with up to 48 stats of your choice, values 1-1000, for testing builds offline.
+- **10.6: Set values directly beyond the game's ranges** (full version): any value the game still reads, up to ±1000, for testing builds offline.
+
+Items made with DEV GENERATION or Set values directly are always **NOT LEGIT** (red border in the game; worn, they keep runs off the ladder).
+
+## ✨ Features (v10.8)
 
 | Feature | Demo (here) | Full version (Discord) |
 |---|:---:|:---:|
 | Load / export save codes, automatic backup before every export | ✅ | ✅ |
 | **Gold & Charsi**: gold editing, every Charsi upgrade with gold spent, next price and gold to max | ✅ | ✅ |
 | **Update notice**: shows when a newer stable version is out on Discord | ✅ | ✅ |
+| **6 languages**: English, Polski, Deutsch, Français, 한국어, 简体中文 (globe and flag, top right) | ✅ | ✅ |
 | Character & Mercenary, active hero bar | ✅ | ✅ |
+| **Both weapon sets** shown and checked | ✅ | ✅ |
 | Items & Modifiers: every stat, its range and **LEGIT / NOT LEGIT** status | 👁️ view | ✅ edit |
-| Item tooltips exactly like in the game (All Resistances, damage, final Defense, set bonuses) | ✅ | ✅ |
+| Item tooltips exactly like in the game (All Resistances, damage, final Defense, set bonuses, Required Level) | ✅ | ✅ |
 | Stash: personal and shared stash tabs | ✅ | ✅ |
 | Reference: every unique, set item and runeword with its ranges | ✅ | ✅ |
 | Check save with the game's own rules (items + hero builds) | ✅ | ✅ |
@@ -50,6 +64,9 @@ Features may differ between versions. Check the relevant repository for details.
 | Rares with up to 6 chosen affixes (multi-core search) | 👁️ preview | ✅ |
 | **DESIGN**: pick the picture of rings, amulets and charms | 👁️ preview | ✅ |
 | Re-roll items to the values you want (stays legit) | 👁️ preview | ✅ |
+| Put weapons and shields into **either weapon set** | 👁️ preview | ✅ |
+| **Set values directly**, also beyond the game's ranges (up to ±1000, Not legit) | 👁️ preview | ✅ |
+| **DEV GENERATION**: unique or set items with up to 48 stats of your choice (Not legit) | 👁️ preview | ✅ |
 | **Skills** editor, **Belt & Potions** editor | 👁️ preview | ✅ |
 
 For the exact changes in each build, check the [release notes](https://github.com/justPLguy/D2-Survivors-Save-Editor-EXE/releases).
@@ -59,12 +76,12 @@ For the exact changes in each build, check the [release notes](https://github.co
 ### 1. Download
 
 1. Open the **[latest release](https://github.com/justPLguy/D2-Survivors-Save-Editor-EXE/releases/latest)**.
-2. Under **Assets**, download `D2 Survivors Save Editor 10.4 Demo.exe`.
+2. Under **Assets**, download `D2 Survivors Save Editor 10.8 Demo.exe`.
 3. Move it to a folder where you want to keep the editor and double-click it.
 
 Download the executable only from this official repository, not from third-party websites.
 
-Works with D2 Survivors **2026.1101.1**.
+Works with D2 Survivors **2026.1102.1** (saves from 2026.1101.1 load too).
 
 ### 2. Edit Your Save
 
@@ -75,6 +92,7 @@ Works with D2 Survivors **2026.1101.1**.
 5. In the game, open **SAVES**, paste the new code and load it.
 
 Not sure where to start? Open the red **HOW TO USE EDITOR** tab inside the editor: it explains every tab and button.
+To change the language, click the globe and flag in the top-right corner.
 
 **Always keep a copy of your original save code before making changes.**
 
